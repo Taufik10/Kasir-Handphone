@@ -147,20 +147,7 @@
             <!-- BEGIN PAGE HEADER-->   
             <div class="row-fluid">
                <div class="span12">
-                   <!-- BEGIN THEME CUSTOMIZER-->
-                   <div id="theme-change" class="hidden-phone">
-                       <i class="icon-cogs"></i>
-                        <span class="settings">
-                            <span class="text">Theme Color:</span>
-                            <span class="colors">
-                                <span class="color-default" data-style="default"></span>
-                                <span class="color-green" data-style="green"></span>
-                                <span class="color-gray" data-style="gray"></span>
-                                <span class="color-purple" data-style="purple"></span>
-                                <span class="color-red" data-style="red"></span>
-                            </span>
-                        </span>
-                   </div>
+                   <!-- BEGIN THEME CUSTOMIZER-->                   
                    <!-- END THEME CUSTOMIZER-->
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                   @yield('content')
@@ -205,6 +192,12 @@
    <script src="/Metro%20Lab_files/jquery.js" type="text/javascript"></script>
    <script src="/Metro%20Lab_files/Chart.js"></script>
    <script src="/Metro%20Lab_files/jquery_004.js"></script>
+   <script src="/Metro%20Lab_files/jquery.flot.js"></script>
+   <script src="/Metro%20Lab_files/jquery.flot.resize.js"></script>
+   <script src="/Metro%20Lab_files/jquery.flot.pie.js"></script>
+   <script src="/Metro%20Lab_files/jquery.flot.stack.js"></script>
+   <script src="/Metro%20Lab_files/jquery.flot.crosshair.js"></script>
+
 
 
    <!--common script for all pages-->

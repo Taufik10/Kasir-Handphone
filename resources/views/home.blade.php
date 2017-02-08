@@ -54,10 +54,10 @@
                 <div class="space10"></div>
                 <!--END METRO STATES-->
             </div>
-            <!-- <div class="row-fluid">
+             <div class="row-fluid">
                 <div class="span6">
-                    <!-- BEGIN CHART PORTLET-->
-                    <!-- <div class="widget ">
+                    
+                    <div class="widget ">
                         <div class="widget-title">
                             <h4><i class="icon-reorder"></i> Doughnut</h4>
                             <span class="tools">
@@ -67,12 +67,12 @@
                         </div>
                         <div class="widget-body">
                             <div class="text-center">
-                                <canvas style="width: 400px; height: 300px;" id="doughnut" height="300" width="400"></canvas>
+                              <div id="donut" class="chart"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- END CHART PORTLET-->
-                <!-- </div>       -->          -->
+                <!--   -->
 
             <div class="row-fluid">
                 <div class="span7">                   
@@ -90,15 +90,14 @@
 var Script = function () {
 
         var doughnutData = [
-            
             @foreach($chart as $value)
             {
-                value: {{ $value->jumlah_barang }},
+                label: "{{ $value->nama_barang }}",
+                data: {{ $value->jumlah_barang }},
                 color:"#{{ str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT) }}{{ str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT)}}{{ str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT)}}",
                 // nama: 'tes'
             },
             @endforeach
-
         ];
 
     var lineChartData = {
@@ -122,8 +121,22 @@ var Script = function () {
 
     };
 
-    new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
-    new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+    $.plot($("#donut"), doughnutData,
+            {
+                series: {
+                    pie: {
+                        innerRadius: 0.5,
+                        show: true
+                    }
+                }
+            });
+    // $("#doughnut").width = "200";
+    //     var myDoughnutChart = new Chart($("#doughnut"), {
+    //     type: 'doughnut',
+    //     data: doughnutData,
+    //     labels: 'asdas'
+    // });
+    // new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 
 }();
 </script>

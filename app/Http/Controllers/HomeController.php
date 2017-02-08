@@ -37,7 +37,7 @@ class HomeController extends Controller {
 		$pegawai = \App\Pegawai::count();
 		$tbarang = \App\Tbarang::groupBy('kode_penjualan')->get()->count();
 		$tproduk = \App\Tproduk::groupBy('kode_penjualan')->get()->count();
-		$chart = \App\Tbarang::select(\DB::raw('count(nama_barang) as jumlah_barang'))->groupBy('nama_barang')->orderBy('jumlah_barang','desc')->take(5)->get();
+		$chart = \App\Tbarang::select(\DB::raw('nama_barang, count(nama_barang) as jumlah_barang'))->groupBy('nama_barang')->orderBy('jumlah_barang','desc')->take(5)->get();
 
 		// return response()->json($chart);
 

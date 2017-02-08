@@ -272,8 +272,8 @@ window.Chart = function(context){
 			animationSteps : 100,
 			animationEasing : "easeOutBounce",
 			animateRotate : true,
-			animateScale : false,
-			onAnimationComplete : null
+			animateScale : true,
+			onAnimationComplete : null,
 		};		
 
 		var config = (options)? mergeChartConfig(chart.Doughnut.defaults,options) : chart.Doughnut.defaults;
